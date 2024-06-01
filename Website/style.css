@@ -1,0 +1,541 @@
+
+@font-face {
+    font-family: 'FlowersSunday';
+    src: url('fonts/FlowersSunday.otf') format('opentype');
+    font-family: 'Heavitas';
+    src: url('Fonts/Heavitas.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Default styles for larger screens */
+@media (min-width: 1024px) {
+    .container-element h1 {
+        font-size: 100px;
+    }
+    .container-element p {
+        font-size: 20px;
+    }
+    .curriculum-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .prestasi-item {
+        flex: 0 1 23%;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .container-element h1 {
+        font-size: 80px;
+    }
+    .container-element p {
+        font-size: 18px;
+    }
+    .curriculum-container {
+        grid-template-columns: 1fr;
+    }
+    .prestasi-item {
+        flex: 0 1 45%;
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 767px) {
+    body {
+        padding-top: 40px;
+    }
+    .container-element h1 {
+        font-size: 50px;
+    }
+    .container-element p {
+        font-size: 16px;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav a {
+        margin: 10px 0;
+    }
+    .image, .image2 {
+        width: 100%;
+        height: auto;
+    }
+    .container-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .prestasi-item {
+        flex: 0 1 100%;
+    }
+    .curriculum-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+    background-color: #000;
+}
+
+body {
+    font-family: 'Monsterrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f5f5f5;
+    padding-top: 60px;
+}
+
+.custom-font {
+    font-family: 'FlowersSunday', sans-serif;
+}
+
+.custom-font2 {
+    font-family: 'Heavitas', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fd8b43; /* Example background color */
+    padding: 10px 20px; /* Add padding for better alignment */
+    box-sizing: border-box;
+    position: fixed; /* Menambahkan posisi tetap */
+    top: 0; /* Menempel di bagian atas halaman */
+    width: 100%; /* Memastikan lebar penuh */
+    z-index: 1000; /* Memberikan z-index tinggi untuk memastikan header berada di atas konten lainnya */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek 3D */
+}
+
+section {
+    padding-top: 60px;
+}
+
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+    width: auto; /* Keep aspect ratio */
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333; /* Example text color */
+}
+
+nav a:hover {
+    color: #7865d4; /* Example hover color */
+}
+
+#landing {
+    padding: 30px auto;
+}
+.container-element {
+    display: flex;
+    align-items: center;
+}
+
+.container-element h1 {
+    font-size: 100px;
+}
+
+.container-element p {
+    font-size: 20px;
+}
+
+
+.image {
+    margin-left: auto; /* Menggeser gambar ke sisi kanan */
+    max-width: 100%; /* Atur lebar maksimum gambar */
+    height: auto; /* Biarkan tinggi gambar disesuaikan agar tidak terdistorsi */
+    height: 400px;
+    width: 400px;
+}
+
+.image2 {
+    margin-left: 30px; /* Menggeser gambar ke sisi kanan */
+    max-width: 100%; /* Atur lebar maksimum gambar */
+    height: auto; /* Biarkan tinggi gambar disesuaikan agar tidak terdistorsi */
+    height: 400px;
+    width: 400px;
+}
+
+.content {
+    margin-right: auto; /* Menggeser konten ke sisi kiri */
+    margin: 50px;
+    max-width: 50%; /* Atur lebar maksimum konten */
+}
+
+h1 {
+    font-size: 3em; /* Atur ukuran font menjadi sangat besar */
+}
+
+.keunggulan-container {
+    background-color: #68c892; /* Warna latar belakang khusus */
+    padding: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.keunggulan-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+
+.star-image {
+    width: 40px; /* Atur lebar gambar */
+}
+
+.keunggulan-content h2 {
+    margin: 10px 0; /* Tambahkan margin untuk spasi yang lebih baik */
+}
+
+.keunggulan-content p {
+    margin: 10px 0; /* Tambahkan margin untuk spasi yang lebih baik */
+}
+
+.program-praktik{
+    margin-top: 50px; /* Atur jarak antara bagian program dengan bagian sebelumnya */
+    padding: 20px;
+    margin: 50px;
+}
+
+#program h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+#kurikulum{
+    padding: 20px;
+    padding-top: 60px;
+    margin: 50px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.container-wrapper {
+    display: flex;
+    overflow-x: auto; /* Mengaktifkan scroll horizontal jika kontainer melebihi lebar layar */
+    gap: 20px; /* Jarak antar kontainer */
+    flex-wrap: nowrap; /* Memastikan semua kontainer berada dalam satu baris */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Jarak antar kontainer */
+    width: 100%; /* Mengisi lebar layar */
+}
+
+
+
+.container h3 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.container-dalam {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Jarak antar kegiatan-item */
+    width: 100%; /* Mengisi lebar kontainer */
+    color: #000;
+}
+
+.kegiatan-item {
+    flex-basis: calc(33.33% - 40px); /* Lebar setiap kegiatan-item */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.kegiatan{
+    height: 200px;
+    width: fit-content;
+}
+
+.kegiatan-item p {
+    margin: 10px 0;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
+
+.curriculum-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    color: #000;
+}
+.curriculum-section {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.curriculum-section img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.curriculum-section h4 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Memberikan warna latar belakang yang sama dan lebar penuh untuk seluruh section */
+#pengalaman {
+    background-color: #7865d4; /* Warna latar belakang untuk seluruh section */
+    padding: 60px 0; /* Menambahkan padding atas dan bawah, dan tidak pada kiri dan kanan */
+    width: 100%;
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+/* Menyesuaikan container prestasi agar tetap berada di tengah */
+.prestasi-container {
+    display: flex;
+    justify-content: center; /* Menempatkan container di tengah */
+    flex-wrap: wrap; /* Membuat elemen melanjutkan ke baris berikutnya jika tidak muat */
+    padding: 20px; /* Memberikan jarak di setiap sisi container */
+    margin: 0 auto; /* Memastikan container berada di tengah */
+    max-width: 1200px; /* Memberikan lebar maksimum pada container */
+    box-sizing: border-box;
+    background-color: transparent; /* Mengatur background menjadi transparan untuk mewarisi warna dari section */
+    border-radius: 10px; /* Menambahkan border-radius untuk sudut yang lebih halus */
+    margin-bottom: 20px; /* Menambahkan margin bawah untuk memberi jarak dengan bagian lain */
+    color: #000;
+}
+
+.prestasi-item {
+    flex: 0 1 23%; /* Mengatur lebar setiap elemen, bisa disesuaikan */
+    box-sizing: border-box; /* Memastikan padding dan border dimasukkan dalam ukuran elemen */
+    text-align: center; /* Mengatur teks agar berada di tengah */
+    margin: 10px; /* Menambahkan margin antar elemen */
+    background-color: white; /* Warna latar belakang untuk setiap item prestasi */
+    padding: 15px; /* Memberikan sedikit ruang di sekitar konten */
+    border-radius: 10px; /* Menambahkan border-radius untuk sudut yang lebih halus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek 3D */
+}
+
+.prestasi-item img {
+    width: 100%; /* Membuat gambar memenuhi lebar elemen */
+    height: auto; /* Mengatur tinggi gambar secara proporsional */
+}
+
+/* Container untuk Peluang Karir */
+.career-opportunities {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Menambahkan border-radius untuk sudut yang lebih halus */
+}
+
+/* Heading untuk Peluang Karir */
+.career-opportunities h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk daftar Peluang Karir */
+.career-opportunities ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.career-opportunities a {
+    text-decoration: none;
+}
+
+
+.career-opportunities li {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.career-opportunities li:last-child {
+    border-bottom: none;
+}
+
+/* Gaya untuk item daftar saat dihover */
+.career-opportunities li:hover {
+    background-color: #FD8B43;
+    transition: .2s;
+    color: #7865d4;
+    cursor: pointer;
+}
+
+.career-opportunities {
+    text-align: center;
+    padding: 20px;
+}
+
+.listings-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure the items wrap on smaller screens */
+}
+
+.listing {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 300px; /* Set a max width to control the size of the columns */
+    align-items: center; /* Center the items in each listing */
+}
+
+.listing img {
+    width: 100%; /* Make the image fill the width of the element */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+.listing ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.listing ul li {
+    margin: 10px 0;
+}
+
+.listing a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Container untuk bagian "Ajakan Bergabung" */
+#informasi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Kontainer khusus untuk ajakan bergabung */
+.join-us {
+    text-align: center;
+    max-width: 1000px;
+    padding: 20px;
+    display: flex;
+}
+
+/* Gambar di atas teks */
+.join-us img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* Paragraf dalam ajakan bergabung */
+.join-us h1 {
+    font-size: 50px;
+    color: #ffffff;
+    align-content: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 200px;
+    
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section form {
+    padding-top: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
